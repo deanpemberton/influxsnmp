@@ -168,9 +168,9 @@ func (c *SnmpConfig) Translate() {
 	}
 	defer client.Conn.Close()
 	spew("Looking up column names for:", c.Host)
-	pdus, err := client.BulkWalkAll(nameOid)
+	pdus, err := client.WalkAll(nameOid)
 	if err != nil {
-		fatal("SNMP bulkwalk error", err)
+		fatal("SNMP walk error", err)
 	}
 	c.asName = make(map[string]string)
 	c.asOID = make(map[string]string)
