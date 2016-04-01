@@ -1,13 +1,6 @@
 FROM alpine
 MAINTAINER Dean Pemberton dean@deanpemberton.com
 
-ENV \
- RAINTANK_apiKey="" \
- RAINTANK_logLevel="ERROR" \
- RAINTANK_numCPUs=1 \
- RAINTANK_probeServerPort=8284 \
- RAINTANK_serverUrl="https://controller.raintank.io"
-
 COPY docker-image-files /
 
 RUN \
