@@ -21,7 +21,7 @@ type Control struct {
 
 var (
 	errorSNMP int
-	nameOid   = "1.3.6.1.2.1.31.1.1.1.1" // ifName
+	nameOid   = "1.3.6.1.2.1.2.2.1.2" // ifDescr
 )
 
 const (

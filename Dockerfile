@@ -4,7 +4,7 @@ MAINTAINER Dean Pemberton dean@deanpemberton.com
 COPY docker-image-files /
 
 RUN \
-  date && \
+  echo "000001" && \
   export GOPATH=/go && \
   apk update && \
   apk add -f \
