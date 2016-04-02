@@ -136,7 +136,7 @@ func bulkStats(snmp *gosnmp.GoSNMP, cfg *SnmpConfig) error {
 	}
 	for i := 0; i < len(cfg.oids); i += 1 {
 		cfg.incRequests()
-		if err := snmp.BulkWalk(cfg.oids[i], addPacket); err != nil {
+		if err := snmp.Walk(cfg.oids[i], addPacket); err != nil {
 			errLog("SNMP (%s) get error: %s\n", cfg.Host, err)
 			cfg.incErrors()
 			cfg.LastError = now
@@ -153,9 +153,9 @@ func printSnmpNames(c *SnmpConfig) {
 		fatal(err)
 	}
 	defer client.Conn.Close()
-	pdus, err := client.BulkWalkAll(nameOid)
+	pdus, err := client.WalkAll(nameOid)
 	if err != nil {
-		fatal("SNMP bulkwalk error", err)
+		fatal("SNMP walk error", err)
 	}
 	for _, pdu := range pdus {
 		switch pdu.Type {
