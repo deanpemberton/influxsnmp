@@ -24,7 +24,7 @@ type SnmpConfig struct {
 	Host      string `gcfg:"host"`
 	Public    string `gcfg:"community"`
 	Port      int    `gcfg:"port"`
-	Version uint8 0x0
+	Version uint8 `gcfg:"version"`
 	Retries   int    `gcfg:"retries"`
 	Timeout   int    `gcfg:"timeout"`
 	Repeat    int    `gcfg:"repeat"`

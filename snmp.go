@@ -170,7 +170,7 @@ func snmpClient(s *SnmpConfig) (*gosnmp.GoSNMP, error) {
 		Target:    s.Host,
 		Port:      uint16(s.Port),
 		Community: s.Public,
-		Version:   gosnmp.Version2c,
+		Version:   s.Version,
 		Timeout:   time.Duration(s.Timeout) * time.Second,
 		Retries:   s.Retries,
 	}
